@@ -1,4 +1,7 @@
 import { Route, Routes } from "react-router-dom"
+import NotFound from "../page/NotFound"
+import HomePage from "../page/HomePage"
+import Layout from "../page/Layout"
 
 
 function App() {
@@ -7,11 +10,12 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" elements={ } >
-          <Route index element={ } />
-          <Route paath="register" />
-          <Route path="login" />
-          <Route path="contacts" />
+        <Route path="/" elements={<Layout/> } >
+          <Route index element={<HomePage/> } />
+          <Route paath="/register" />
+          <Route path="/login" />
+          <Route path="/contacts" />
+          <Route path="*" element={NotFound} />
         </Route>
       </Routes>
     </div>
